@@ -487,6 +487,8 @@ runBtn.addEventListener("click", () => {
   void onRun();
 });
 
+selectScenario("stripe");
+
 void fetchSamples()
   .then((loaded) => {
     const previousDefault = samples[selected];
