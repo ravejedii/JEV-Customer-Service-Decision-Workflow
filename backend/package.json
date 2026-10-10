@@ -1,0 +1,28 @@
+{
+  "name": "jev-triage-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Support triage API. A typed model classifies, application code routes, and an open chat model only writes.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file=../.env src/main.ts",
+    "start": "tsx --env-file=../.env src/main.ts",
+    "test": "tsx --test src/workflow/route.test.ts src/workflow/validate.test.ts src/jev/questions.test.ts src/reply/prompt.test.ts src/server.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.6.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.15.30",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

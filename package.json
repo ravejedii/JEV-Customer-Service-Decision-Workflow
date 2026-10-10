@@ -1,0 +1,14 @@
+{
+  "name": "jev-customer-service-decision-workflow",
+  "private": true,
+  "description": "Support triage where a typed model decides, application code routes, and an open chat model only writes.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "npm test --prefix backend",
+    "typecheck": "npm run typecheck --prefix backend && npm run build --prefix web",
+    "dev:api": "npm run dev --prefix backend",
+    "dev:web": "npm run dev --prefix web"
+  }
+}

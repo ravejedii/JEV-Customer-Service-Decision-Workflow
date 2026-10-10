@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            backend/package-lock.json
+            web/package-lock.json
+      - name: Test and typecheck the API
+        working-directory: backend
+        run: |
+          npm ci
+          npm test
+          npm run typecheck
+      - name: Typecheck and build the UI
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
